@@ -1,0 +1,59 @@
+h1 {
+    color: #FF5733;
+    font-size: 36px;
+    text-align: center;
+}
+
+
+/* Food Section Start | 3x3 Images */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.image-item {
+    text-align: center;
+}
+
+.image-item img {
+    max-width: 100%;
+}
+
+.image-item h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.image-item p {
+    font-size: 14px;
+}
+/* Food Section Ends |  3x3 Images */
+
+/* Footer Section */
+footer {
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #f8f8f8;
+    overflow: hidden;
+    padding: 10px 20px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}

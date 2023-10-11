@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food4u</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    
+    <!-- Navbar section start -->
+    <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </nav>
+    <!-- Navbar section ends -->
+    <h1>Food4u</h1>
+    <p>Welcome to Food4u! We deliver delicious meals to your doorstep.</p>
+        <!-- Food Section Start-->
+    <div class="image-grid">
+        <div class="image-item">
+            <img src="{{ url_for('static', filename='image1.jpg') }}" alt="Image 1">
+            <h2>Heading 1</h2>
+            <p>price: $10</p>
+            <button class="decrement">-</button>
+        <input type="text" value="1" class="quantity">
+        <button class="increment">+</button>
+        <form action="{{ url_for('add_to_cart') }}" method="POST">
+          <input type="hidden" name="product_name" value="Product Name">
+          <input type="hidden" name="price" value="10.00">
+          <input type="hidden" name="quantity" class="cart-quantity">
+          <button type="submit" class="add-to-cart">Add to Cart</button>
+        </form>
+        </div>
+        <div class="image-item">
+            <img src="{{ url_for('static', filename='image2.jpg') }}" alt="Image 2">
+            <h2>Heading 2</h2>
+            <p>price: $10</p>
+            <button class="decrement">-</button>
+        <input type="text" value="1" class="quantity">
+        <button class="increment">+</button>
+        <form action="{{ url_for('add_to_cart') }}" method="POST">
+          <input type="hidden" name="product_name" value="Product Name">
+          <input type="hidden" name="price" value="10.00">
+          <input type="hidden" name="quantity" class="cart-quantity">
+          <button type="submit" class="add-to-cart">Add to Cart</button>
+        </form>
+        </div>
+        <div class="image-item">
+            <img src="{{ url_for('static', filename='image3.jpg') }}" alt="Image 3">
+            <h2>Heading 3</h2>
+            <p>price: $10</p>
+            <button class="decrement">-</button>
+        <input type="text" value="1" class="quantity">
+        <button class="increment">+</button>
+        <form action="{{ url_for('add_to_cart') }}" method="POST">
+          <input type="hidden" name="product_name" value="Product Name">
+          <input type="hidden" name="price" value="10.00">
+          <input type="hidden" name="quantity" class="cart-quantity">
+          <button type="submit" class="add-to-cart">Add to Cart</button>
+        </form>
+        </div>
+        <!-- Food Section Ends-->
+        
+    </div>
+
+    <!-- Footer Start-->
+    <footer>
+        <p>&copy; 2023 Food4u. All rights reserved.</p>
+    </footer>
+    <!-- Footer Ends-->  
+</body>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</html>
