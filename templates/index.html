@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food4u</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Navbar section start -->
+    <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/login">Login</a>
+        
+        <button onclick="viewCart()">View Cart</button>
+    </nav>
+    <!-- Navbar section ends -->
+    <h1>Food4u</h1>
+    <p>Welcome to Food4u! We deliver delicious meals to your doorstep.</p>
+
+ <!-- Food Section Start-->
+<div class="image-grid">
+    <div class="image-item">
+        <img src="{{ url_for('static', filename='img/samosa.jpg') }}" alt="Samosa">
+        <h2>Samosa</h2>
+        <p>A crispy, deep-fried snack filled with a spiced mixture of mashed potatoes and other vegetables. A popular snack in Indian cuisine.</p>
+        <button onclick="addToCart('Samosa')">Add to Cart</button>
+
+        <!-- Star Rating System -->
+        <div class="stars" data-item="Samosa">
+            <span class="star" onclick="rateItem(this, 1)">&#9734;</span>
+            <span class="star" onclick="rateItem(this, 2)">&#9734;</span>
+            <span class="star" onclick="rateItem(this, 3)">&#9734;</span>
+            <span class="star" onclick="rateItem(this, 4)">&#9734;</span>
+            <span class="star" onclick="rateItem(this, 5)">&#9734;</span>
+        </div>
+        <p class="rating-text">Average Rating: <span class="average-rating">0</span></p>
+    </div>
+    <div class="image-item">
+        <img src="{{ url_for('static', filename='img/biryani.jpg') }}" alt="Biryani">
+        <h2>Biryani</h2>
+        <p>A fragrant rice dish cooked with a blend of spices, saffron, and either chicken, lamb, or vegetables. A beloved dish in many parts of South Asia.</p>
+        <button onclick="addToCart('Biryani')">Add to Cart</button>
+
+        <!-- Star Rating System -->
+        <div class="stars" data-item="Biryani">
+            <span class="star" onclick="rateItem(this, 1)">&#9734;</span>
+            <span class="star" onclick="rateItem(this, 2)">&#9734;</span>
+            <span class="star" onclick="rateItem(this, 3)">&#9734;</span>
+            <span class="star" onclick="rateItem(this, 4)">&#9734;</span>
+            <span class="star" onclick="rateItem(this, 5)">&#9734;</span>
+        </div>
+        <p class="rating-text">Average Rating: <span class="average-rating">0</span></p>
+    </div>
+    <div class="image-item">
+        <img src="{{ url_for('static', filename='img/burger.jpg') }}" alt="Burger">
+        <h2>Burger</h2>
+        <p>A classic fast-food item consisting of a ground meat patty, often beef, served in a sliced bun with various toppings and condiments.</p>
+        <button onclick="addToCart('Burger')">Add to Cart</button>
+
+        <!-- Star Rating System -->
+        <div class="stars" data-item="Burger">
+            <span class="star" onclick="rateItem(this, 1)">&#9734;</span>
+            <span class="star" onclick="rateItem(this, 2)">&#9734;</span>
+            <span class="star" onclick="rateItem(this, 3)">&#9734;</span>
+            <span class="star" onclick="rateItem(this, 4)">&#9734;</span>
+            <span class="star" onclick="rateItem(this, 5)">&#9734;</span>
+        </div>
+        <p class="rating-text">Average Rating: <span class="average-rating">0</span></p>
+    </div>
+</div>
+<!-- Food Section Ends-->
+
+    
+    <!-- Cart Modal Start-->
+    <div id="cartModal" style="display: none;">
+        <h2>Your Cart Items:</h2>
+        <ul id="cartList">
+            <!-- Cart items will be appended here -->
+        </ul>
+        <button onclick="closeModal()">Close</button>
+        <button id="checkoutButton" onclick="checkout()" disabled>Checkout</button>
+    </div>
+    <!-- Cart Modal Ends-->
+
+    
+
+    <!-- Footer Start-->
+    <footer>
+        <p>&copy; 2023 Food4u. All rights reserved.</p>
+    </footer>
+    <!-- Footer Ends-->  
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
