@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request,flash,url_for,redirect
 
 app = Flask(__name__)
 app.static_folder = 'static'
@@ -6,23 +6,6 @@ app.static_folder = 'static'
 @app.route('/')
 def home():
     return render_template('index.html')
-@app.route('/add_to_cart', methods=['POST'])
-def add_to_cart():
-    product_name = request.form.get('product_name')
-    price = float(request.form.get('price'))
-    quantity = int(request.form.get('quantity'))
-
-    if 'cart' not in session:
-        session['cart'] = []
-        
-    cart_item = {
-        'product_name': product_name,
-        'price': price,
-        'quantity': quantity,
-    }
-
-    session['cart'].append(cart_item)
-    return redirect(url_for('index'))    
 
 @app.route('/about')
 def about():
@@ -32,6 +15,35 @@ def about():
 def contact():
     return "Contact Food4u!"
 
+@app.route('/login',methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        
+        # Replace these values with your desired login credentials
+        if username == 'admin' and password == 'password':
+            flash('Login successful!', 'success')
+            return redirect(url_for('login'))
+        else:
+            flash('Invalid credentials. Try again.', 'danger')
+            return redirect(url_for('login'))
+            
+    return render_template('login.html')
+
+
+# Checkout Feature
+@app.route('/checkout', methods=['GET', 'POST'])
+def checkout():
+    if request.method == 'POST':
+        # Handle the checkout process: update inventory, process payment, etc.
+        # ...
+        pass
+    return render_template('checkout.html')
+
+@app.route('/place_order')
+def placed():
+    return render_template('order_placed.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
