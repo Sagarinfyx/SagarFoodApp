@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Delicious Delights</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Delicious Delights</h1>
+        <div class="about-section">
+            <h2>About Us</h2>
+            <p>Welcome to Delicious Delights, where we bring you the finest culinary experience. Our passion for food
+                drives us to create exquisite dishes that tantalize your taste buds and leave you craving for more.
+                With our carefully selected ingredients and expert chefs, we ensure every bite is a journey of flavors and
+                textures. Join us in our celebration of good food and great company.</p>
+            <p>Indulge in our carefully curated menu, designed to cater to every palate and preference. Whether you're
+                a fan of traditional flavors or seeking bold, innovative combinations, we have something for everyone.
+                We take pride in delivering not just meals but an experience that lingers on your senses long after
+                the last bite.</p>
+        </div>
+    
+        <div class="team-section">
+            <h2>Our Team</h2>
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='img/chef1.jpg') }}" alt="chef1">
+                <h3>John Doe</h3>
+                <p>Head Chef</p>
+            </div>
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='img/chef2.jpg') }}" alt="Samosa">
+                <h3>Jane Smith</h3>
+                <p>Pastry Chef</p>
+            </div>
+        </div>
+    
+        <footer>
+            <p>&copy; 2023 Delicious Delights. All rights reserved.</p>
+        </footer>
+    </body>
+    </html>
